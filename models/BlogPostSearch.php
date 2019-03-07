@@ -85,6 +85,8 @@ class BlogPostSearch extends BlogPost
                 ->andFilterWhere(['like', 'content', $this->content])
                 ->andFilterWhere(['like', 'tags', $this->tags])
                 ->andFilterWhere(['like', 'slug', $this->slug]);
+        } elseif ($this->scenario == self::SCENARIO_USER) {
+            $query->andFilterWhere(['like', 'tags', $this->tags]);
         }
 
         return $dataProvider;
