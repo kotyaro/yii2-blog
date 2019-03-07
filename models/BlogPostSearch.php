@@ -36,7 +36,7 @@ class BlogPostSearch extends BlogPost
     {
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_ADMIN] = ['id', 'category_id', 'click', 'user_id', 'status', 'title'];
-        $scenarios[self::SCENARIO_USER] = ['category_id', 'title'];
+        $scenarios[self::SCENARIO_USER] = ['category_id', 'title', 'tags'];
         return $scenarios;
     }
 
